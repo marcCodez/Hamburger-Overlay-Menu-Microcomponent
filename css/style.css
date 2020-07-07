@@ -17,7 +17,7 @@ body {
 }
 
 .container {
-	max-width: 960px;
+	max-width: 60rem;
 	margin: auto;
 	overflow: hidden;
 	padding: 0 3rem;

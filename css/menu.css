@@ -1,0 +1,65 @@
+/* menu-wrap covers everything even the entire overlay */
+.menu-wrap {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+/* toggler is the hidden checkbox, clicking anywhere  on the hamburger will check it */
+.menu-wrap .toggler {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	cursor: pointer;
+	width: 3.125rem;
+	height: 3.125rem;
+	/* hide the checkbox */
+	opacity: 0;
+}
+
+/* this handles the tranparent hamburger container */
+.menu-wrap .hamburger {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 3.75rem;
+	height: 3.75rem;
+	padding: 1rem;
+	background: var(--primary-color);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Hamburger Line */
+.menu-wrap .hamburger > div {
+	position: relative;
+	/* sizes the flex item according to the width / height of the content, but doesn't allow it to shrink. This means the item has the potential to overflow the container. */
+	flex: none;
+	/* doesnt go all the way across because of the padding on the parent */
+	width: 100%;
+	height: 0.125rem;
+	background: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Hamburger Lines - Top & Bottom */
+.menu-wrap .hamburger > div::before,
+.menu-wrap .hamburger > div::after {
+	content: "";
+	position: absolute;
+	z-index: 1;
+	top: -0.625rem;
+	width: 100%;
+	height: 0.125rem;
+	background: inherit;
+}
+
+.menu-wrap .hamburger > div::after {
+	top: 0.625rem;
+}
